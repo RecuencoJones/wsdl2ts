@@ -13,8 +13,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: 12
-    - uses:
-      name: Install
+    - name: Install
       run: npm install
     - name: Lint and test
       run: |
