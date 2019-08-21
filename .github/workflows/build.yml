@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup node 12
+      uses: actions/setup-node@v1
+      with:
+        version: 12
+    - name: Install
+      run: npm install
+    - name: Lint and test
+      run: |
+        npm run lint
+        npm test
+    - name: Build
+      run: npm run build
